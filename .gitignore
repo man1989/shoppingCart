@@ -1,5 +1,4 @@
 node_modules/
 __build__/
 npm-debug.log
-.npmrc
 package-lock.json
