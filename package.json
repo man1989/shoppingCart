@@ -1,0 +1,23 @@
+{
+  "name": "my-cart",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node ser  ",
+    "build:watch": "npm run build -- --watch",
+    "build": "webpack --verbose --config webpack.config.js"
+  },
+  "dependencies": {
+    "koa": "^2.3.0",
+    "koa-router": "^7.2.1",
+    "koa-static": "^4.0.1",
+    "vue": "^2.4.4",
+    "vuex": "^2.4.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "css-loader": "^0.28.7",
+    "vue-loader": "^13.0.5",
+    "vue-template-compiler": "^2.4.4",
+    "webpack": "^3.6.0"
+  }
+}
