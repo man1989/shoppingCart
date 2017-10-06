@@ -11,15 +11,16 @@ const getters = {
 const mutations = {
     recieve_products(state,{ products }){
         state.all = products
+    },
+    add_cart(state, {id}){
+        state.all.find(p=>p.id===id).inventory--;
     }
 }
 
 const actions = {
     getAllProducts({ commit }){
-        // console.log("got invoked");
         Promise.resolve(shop.getProducts()).then(function(products){
-            console.log(products);
-            commit("recieve_products", {products});
+            commit("recieve_products", { products });
         });
     }
 }

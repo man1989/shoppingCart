@@ -15,7 +15,7 @@ const app = new Koa();
 const router = new Router();
 const compiler = webpack(config);
 
-compiler.watch({}, (err, res)=>{app.listen(8080);});
+compiler.watch({}, (err, res)=>{});
 
 router.get("/", (ctx) => {
     let html = fs.readFileSync("index.html");
@@ -25,3 +25,4 @@ router.get("/", (ctx) => {
 
 app.use(serve("__build__"));
 app.use(router.routes());
+app.listen(8080);

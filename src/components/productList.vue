@@ -3,7 +3,7 @@
       <li v-for="p in products">
           {{p.title}} - {{p.price}}
           <br>
-          <button v-bind:disabled="!p.inventory" v-on:click="addToCard(p)">Add to cart</button>
+          <button v-bind:disabled="!p.inventory" v-on:click="addToCart(p)">Add to cart</button>
       </li>
   </ul>
 </template>
@@ -12,11 +12,20 @@
     import {mapGetters, mapActions} from "vuex";
 
     export default {
-        computed: mapGetters({
-            products:"allProducts"
-        }),
+        computed: {
+            ...mapGetters({
+                products: "allProducts"
+            })
+        },
+        methods: {
+            ...mapActions([
+                "getAllProducts",
+                "addToCart"
+            ])
+        },
         created: function(){
-            this.$store.dispatch("getAllProducts");
+            this.getAllProducts();
+            // this.$store.dispatch("getAllProducts");
         }
     }
 </script>
